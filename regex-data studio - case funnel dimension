@@ -1,0 +1,59 @@
+
+//Startpunt
+//CASE FUNNEL STEP
+
+
+
+CASE
+	WHEN REGEXP_MATCH(Page, ".*/(kwaliteitsoccasie|occasions-de-qualite|certified-used-cars)/(resultaten|resultats|searchresults)$")
+    	THEN "Step 1: Search Results"
+	WHEN REGEXP_MATCH(Page, ".*/(kwaliteitsoccasie|occasions-de-qualite|certified-used-cars)/(details-van-het-voertuig|details-du-vehicule|vehicle-details)$")
+		THEN "Step 2: Vehicle Details"
+	WHEN REGEXP_MATCH(Page, ".*/(kwaliteitsoccasie|occasions-de-qualite|certified-used-cars)/(details-van-het-voertuig|details-du-vehicule|vehicle-details)/(contact-concessiehouder|contact-concessionnaire|contact-dealer)$")
+		THEN "Step 3: Contact Form"
+	WHEN REGEXP_MATCH(Page, ".*/(kwaliteitsoccasie|occasions-de-qualite|certified-used-cars)/(details-van-het-voertuig|details-du-vehicule|vehicle-details)/(contact-concessiehouder|contact-concessionnaire|contact-dealer)/thankyou$")
+		THEN "Step 4: Confirmation"
+   	WHEN REGEXP_MATCH(Page, ".*/stepvehiculeinformations$")
+		THEN "Step 1: Vehicle Details"
+	WHEN REGEXP_MATCH(Page, ".*/steppersonnalinformations$")
+		THEN "Step 2: Personal Details"
+	WHEN REGEXP_MATCH(Page, ".*/stepthankyou$")
+		THEN "Step 3: Confirmation"
+	ELSE "Other"
+END
+
+
+
+//versie 1
+
+
+.*\/(a)\/(tuin|gereedschap|bouwmaterialen|hout-schrijnwerk|verf-houtbescherming|sanitair|verlichting|ijzerwaren)\.html$
+
+
+
+//versie 2 
+
+
+
+.*\/(a)\/(\w+|\w+\-\w+)\.html$
+
+
+ //Finale versie Assortiment categorie - herhaling van '[^\/]+'
+
+.*\/(a)\/([^\/]+)\/([^\/]+)\.html$
+
+
+// finale versie winkelmandje
+
+
+.*\/(panier|winkelmandje)\.html
+
+
+// finale versie inloggen
+
+
+.*(bestellen\/inloggen|fr\/commander\/inloggen)\.html$
+
+
+
+
