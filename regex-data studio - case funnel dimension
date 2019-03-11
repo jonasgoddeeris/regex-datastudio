@@ -83,6 +83,7 @@ END
 
 
 
+//OPGEMAAKT EINDPUNT
 
 CASE
   WHEN REGEXP_MATCH(Page, ".*/(a.html)$") THEN "Step 1: Assortiment"
@@ -93,7 +94,9 @@ CASE
   WHEN REGEXP_MATCH(Page, ".*/(panier|winkelmandje).html$") THEN "Step 6: Cart"
   WHEN REGEXP_MATCH(Page, ".*(bestellen/inloggen|/commander/inloggen).html$") THEN "Step 7: Checkout1-Inloggen"
   WHEN REGEXP_MATCH(Page, ".*(bestellen/gegevens|/commander/vos-coordonnees).html$") THEN "Step 8: Checkout2-Gegevens"
-  WHEN REGEXP_MATCH(Page, ".*(bestellen/betaalwijze|/commander/moyen-de-paiement).html$") THEN "Step 9: Checkout2-Betaalwijze"
+  WHEN REGEXP_MATCH(Page, ".*(bestellen/betaalwijze|/commander/moyen-de-paiement).html$") THEN "Step 9: Checkout3-Betaalwijze"
+  WHEN REGEXP_MATCH(Page, ".*(bestellen/betaalwijze|/commander/recapitulatif).html$") THEN "Step 9: Checkout4-Overzicht"
+  WHEN REGEXP_MATCH(Page, ".*(bestellen/betalen|/commander/paiement).html$") THEN "Step 10: Checkout5-Betalen"
   ELSE "Other"
 END
 
