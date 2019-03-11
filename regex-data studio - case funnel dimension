@@ -57,3 +57,28 @@ END
 
 
 
+// EINDPUNT
+
+CASE
+	WHEN REGEXP_MATCH(Page, ".*/(a.html)$")
+    	THEN "Step 1: Assortiment"
+	WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+).html$")
+		THEN "Step 2: Assortiment - Categorie"
+	WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+)/([^/]+).html$")
+		THEN "Step 3: Assortiment - Categorie detail"
+	WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+)/([^/]+)/([^/]+).html$")
+		THEN "Step 4: Product page"
+   	WHEN REGEXP_MATCH(Page, ".*/p/.*")
+		THEN "Step 5: Product detail page"
+	WHEN REGEXP_MATCH(Page, ".*/(panier|winkelmandje).html$")
+		THEN "Step 6: Cart"
+	WHEN REGEXP_MATCH(Page, ".*/stepthankyou$")
+		THEN "Step 3: Confirmation"
+	ELSE "Other"
+END
+
+
+
+
+
+
