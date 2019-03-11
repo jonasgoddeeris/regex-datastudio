@@ -101,3 +101,25 @@ CASE
   ELSE "Other"
 END
 
+
+
+// EIND EINF - NL PAGINA 
+
+
+CASE
+  WHEN REGEXP_MATCH(Pagina, ".*/(a.html)$") THEN "Step 1: Assortiment"
+  WHEN REGEXP_MATCH(Pagina, ".*/(a)/([^/]+).html$") THEN "Step 2: Assortiment - Categorie"
+  WHEN REGEXP_MATCH(Pagina, ".*/(a)/([^/]+)/([^/]+).html$") THEN "Step 3: Assortiment - Categorie detail"
+  WHEN REGEXP_MATCH(Pagina, ".*/(a)/([^/]+)/([^/]+)/([^/]+).html$") THEN "Step 4: Product page"
+  WHEN REGEXP_MATCH(Pagina, ".*/p/.*") THEN "Step 5: Product detail page"
+  WHEN REGEXP_MATCH(Pagina, ".*/(panier|winkelmandje).html$") THEN "Step 6: Cart"
+  WHEN REGEXP_MATCH(Pagina, ".*(bestellen/inloggen|/commander/inloggen).html$") THEN "Step 7: Checkout1-Inloggen"
+  WHEN REGEXP_MATCH(Pagina, ".*(bestellen/gegevens|/commander/vos-coordonnees).html$") THEN "Step 8: Checkout2-Gegevens"
+  WHEN REGEXP_MATCH(Pagina, ".*(bestellen/betaalwijze|/commander/moyen-de-paiement).html$") THEN "Step 9: Checkout3-Betaalwijze"
+  WHEN REGEXP_MATCH(pagina, ".*(bestellen/betaalwijze|/commander/recapitulatif).html$") THEN "Step 10: Checkout4-Overzicht"
+  WHEN REGEXP_MATCH(Pagina, ".*(bestellen/betalen|/commander/paiement).html$") THEN "Step 11: Checkout5-Betalen"
+  WHEN REGEXP_MATCH(Pagina, ".*(bestellen/bevestiging|/commander/confirmation).html$") THEN "Step 12: Checkout6-Bevestiging"
+  ELSE "Other"
+END
+
+
