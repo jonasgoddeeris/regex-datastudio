@@ -61,7 +61,7 @@ END
 
 CASE
 	WHEN REGEXP_MATCH(Page, ".*/(a.html)$")
-    	THEN "Step 1: Assortiment"
+    		THEN "Step 1: Assortiment"
 	WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+).html$")
 		THEN "Step 2: Assortiment - Categorie"
 	WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+)/([^/]+).html$")
@@ -72,13 +72,28 @@ CASE
 		THEN "Step 5: Product detail page"
 	WHEN REGEXP_MATCH(Page, ".*/(panier|winkelmandje).html$")
 		THEN "Step 6: Cart"
-	WHEN REGEXP_MATCH(Page, ".*/stepthankyou$")
-		THEN "Step 3: Confirmation"
+	WHEN REGEXP_MATCH(Page, ".*(bestellen/inloggen|/commander/inloggen).html$")
+		THEN "Step 7: Checkout1-Inloggen"
+    	WHEN REGEXP_MATCH(Page, ".*(bestellen/gegevens|/commander/vos-coordonnees).html$")
+		THEN "Step 8: Checkout2-Gegevens"
+    	WHEN REGEXP_MATCH(Page, ".*(bestellen/betaalwijze|/commander/moyen-de-paiement).html$")
+		THEN "Step 9: Checkout2-Gegevens"
 	ELSE "Other"
 END
 
 
 
 
-
+CASE
+  WHEN REGEXP_MATCH(Page, ".*/(a.html)$") THEN "Step 1: Assortiment"
+  WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+).html$") THEN "Step 2: Assortiment - Categorie"
+  WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+)/([^/]+).html$") THEN "Step 3: Assortiment - Categorie detail"
+  WHEN REGEXP_MATCH(Page, ".*/(a)/([^/]+)/([^/]+)/([^/]+).html$") THEN "Step 4: Product page"
+  WHEN REGEXP_MATCH(Page, ".*/p/.*") THEN "Step 5: Product detail page"
+  WHEN REGEXP_MATCH(Page, ".*/(panier|winkelmandje).html$") THEN "Step 6: Cart"
+  WHEN REGEXP_MATCH(Page, ".*(bestellen/inloggen|/commander/inloggen).html$") THEN "Step 7: Checkout1-Inloggen"
+  WHEN REGEXP_MATCH(Page, ".*(bestellen/gegevens|/commander/vos-coordonnees).html$") THEN "Step 8: Checkout2-Gegevens"
+  WHEN REGEXP_MATCH(Page, ".*(bestellen/betaalwijze|/commander/moyen-de-paiement).html$") THEN "Step 9: Checkout2-Betaalwijze"
+  ELSE "Other"
+END
 
