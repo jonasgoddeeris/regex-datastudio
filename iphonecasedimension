@@ -1,0 +1,15 @@
+CASE
+	WHEN REGEXP_MATCH(Screen Resolution,"^375x667")
+    	THEN "iPhone 6-8"
+	WHEN REGEXP_MATCH(Screen Resolution,"^320x480")
+		THEN "iPhone 4 or lower"
+	WHEN REGEXP_MATCH(Screen Resolution,"^375x812")
+		THEN "iPhone X(s)"
+	WHEN REGEXP_MATCH(Screen Resolution,"^414x736")
+		THEN "iPhone 6-8+"
+    WHEN REGEXP_MATCH(Screen Resolution,"^414x896")
+		THEN "iPhone Xr/Xs Max" 
+    WHEN REGEXP_MATCH(Screen Resolution,"^320x568")
+		THEN "iPhone 5/SE" 
+	ELSE "Other"
+END
