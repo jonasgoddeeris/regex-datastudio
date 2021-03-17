@@ -168,3 +168,57 @@ case
     end
 
 
+34. Result -  test running
+case
+	when result IS NULL then "Test still running, no results yet"
+    else result
+    end
+
+
+35. RPV - A
+Revenue A/UsersA
+
+
+36. RPV - B
+Revenue B/UsersB
+
+
+
+37. Tool Link
+HYPERLINK(optimize link,"Adobe Target >")
+
+
+
+38. Uplift RPV
+(36. RPV - B/35. RPV - A)-1
+
+
+
+39. Users
+UsersA+UsersB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
