@@ -1,0 +1,6 @@
+
+GOOGLE DATA STUDIO - CUSTOM FIELDS FOR CRO DATA MODEL
+
+
+1. AB test name + dashboard URL
+HYPERLINK(dashoard_url, ab_test_name)
