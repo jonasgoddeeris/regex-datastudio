@@ -59,3 +59,27 @@ ConvB/UsersB
 
 13. Main CR% Uplift
 (ConvB /UsersB)/(ConvA /UsersA)-1
+
+
+14. Advice live icon
+IMAGE(
+	case 
+    when Advice = "Implement" then "https://i.imgur.com/IebJCge.png"
+    when Advice = "Do not implement" then "https://i.imgur.com/Lz262v7.png"
+    when Advice = "Do a follow up test" then "https://i.imgur.com/CVJB5nd.png"
+    else ""
+    END 
+    )
+
+
+15. Advice text main
+case
+	when status = "live" then "Test is live" 
+    when status = "draft" then "Draft"
+    when status = "ended" then Advice  
+    else ""
+    END  
+
+
+16. alt image A
+HYPERLINK(alt A,image(alt A))
