@@ -83,3 +83,52 @@ case
 
 16. alt image A
 HYPERLINK(alt A,image(alt A))
+
+
+17. alt image B
+HYPERLINK(alt B,IMAGE(alt B))
+
+
+18. Arrow uplift or not
+image(
+	case
+    when 13. Main CR% Uplift < 0 then "https://i.imgur.com/exQXKdk.png"
+    when 13. Main CR% Uplift > 0 then "https://i.imgur.com/Qd6JslQ.png"end)
+
+
+19. Average uplift image + link to image
+HYPERLINK(Average uplift IMAGE,IMAGE(Average uplift IMAGE))
+
+
+
+20. Best performing variant
+case
+	when baysian significance >= 0.5 then "Variant B"
+    when baysian significance < 0.5 then "Variant A"
+    else "other"
+    end
+
+
+21. Conversions
+ConvA+ConvB
+
+
+22. CR% A (calc)
+ConvA/UsersA
+
+
+
+23. Recommend action test still running
+case
+	when Recommend action IS NULL then "Test still running, no results yet"
+    else Recommend action
+    end
+
+
+24. CR% A Goal 2 (calc)
+Goal2ConvA/UsersA
+
+
+25. CR% B (calc)
+ConvB/UsersB
+
