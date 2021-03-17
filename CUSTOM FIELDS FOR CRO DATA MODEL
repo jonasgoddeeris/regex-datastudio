@@ -1,10 +1,9 @@
 
-GOOGLE DATA STUDIO - CUSTOM FIELDS FOR CRO DATA MODEL
+///GOOGLE DATA STUDIO - CUSTOM FIELDS FOR CRO DATA MODEL///
 
 
 1. AB test name + dashboard URL
 HYPERLINK(dashoard_url, ab_test_name)
-
 
 
 5. Succes : Succesful - Not succesful
@@ -15,6 +14,28 @@ CASE
 END
 
 
+5. Succes YES NO
+CASE
+	WHEN succes = 1 THEN "Yes"
+    WHEN succes = 0 THEN "No"
+    ELSE "-"
+END
+
+
+6. Mobile CR% A
+mConvA/mUsers A
+
+
+7. Mobile CR% B
+mConvB/mUsers B
+
+
+8. Mobile CR% Uplift
+(mConvB /mUsers B)/(mConvA /mUsers A)-1
+
+
+9. Uplift CR% Goal2
+(Goal2ConvB/UsersB)/(Goal2ConvA/UsersA)-1
 
 
 10. Advice icon main
@@ -32,12 +53,8 @@ image(
 ConvA/UsersA
 
 
-
 12. Main CR% B
 ConvB/UsersB
-
-
-
 
 
 13. Main CR% Uplift
