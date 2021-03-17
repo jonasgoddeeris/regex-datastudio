@@ -132,3 +132,39 @@ Goal2ConvA/UsersA
 25. CR% B (calc)
 ConvB/UsersB
 
+
+26. CR% B Goal 2 (calc)
+Goal2ConvB/UsersB
+
+
+27. Data Link
+HYPERLINK(SRM link,"Raw data >")
+
+
+28. Extra revenue
+Revenue B - Revenue A
+
+
+29. image A
+HYPERLINK(A,IMAGE(A))
+
+
+30. image A to test result
+HYPERLINK(dashoard_url,IMAGE(A))
+
+
+31. image B
+HYPERLINK(B,IMAGE(B))
+
+
+32. image B to test result
+HYPERLINK(dashoard_url,IMAGE(B))
+
+
+33. Key insights test still running
+case
+	when Key insights IS NULL then "Test still running, no results yet"
+    else Key insights
+    end
+
+
